@@ -2,16 +2,28 @@
   "name": "electron-update-test",
   "version": "1.0.0",
   "main": "main.js",
+  "description": "electron-update-test",
+  "license": "MIT",
+  "repository": "sindresorhus/electron-is-dev",
+  "author": {
+    "name": "Jean Carlos Farias",
+    "email": "jean@asseinfo.com.br",
+    "url": "asseinfo.com.br"
+  },
   "build": {
     "appId": "asseinfo.electron.test",
     "mac": {
-      "category": "electron.asseinfo.category.type"
+      "category": "electron.asseinfo.developer-tools.AppImage"
+    },
+    "linux": {
+      "category": "electron.asseinfo.Development.AppImage"
     }
   },
   "dependencies": {},
   "devDependencies": {
     "electron": "^6.0.1",
-    "electron-builder": "^21.2.0"
+    "electron-builder": "^21.2.0",
+    "electron-packager": "^14.0.4"
   },
   "scripts": {
     "start": "electron .",
