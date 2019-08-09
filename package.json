@@ -1,6 +1,6 @@
 {
   "name": "electron-update-test",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "main.js",
   "description": "electron-update-test",
   "license": "MIT",
@@ -17,7 +17,13 @@
     },
     "linux": {
       "category": "electron.asseinfo.Development.AppImage"
-    }
+    },
+    "publish": [{
+      "provider": "github",
+      "repo": "electron-update-test",
+      "url": "https://github.com/jeancx/electron-update-test/releases",
+      "protocol": "https"
+    }]
   },
   "dependencies": {},
   "devDependencies": {
