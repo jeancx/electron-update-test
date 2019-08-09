@@ -1,6 +1,6 @@
 const {app, BrowserWindow, autoUpdater, dialog} = require('electron')
 const server = 'https://update.electronjs.org'
-const feed = `${server}/OWNER/REPO/${process.platform}-${process.arch}/${app.getVersion()}`
+const feed = `${server}/jeancx/electron-update-test/${process.platform}-${process.arch}/${app.getVersion()}`
 const minutesToCheckUpdate = 10
 let win
 
