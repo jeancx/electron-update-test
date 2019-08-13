@@ -1,7 +1,7 @@
 {
   "name": "app",
   "description": "An example app, built with Electron.",
-  "version": "0.0.1",
+  "version": "0.0.20",
   "license": "MIT",
   "author": {
     "name": "Daniel Perez Alvarez",
@@ -9,24 +9,30 @@
     "url": "http://unindented.org/"
   },
   "private": true,
-  "main": "src/index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "clean": "rimraf dist",
     "start": "electron .",
-    "exe32": "electron-packager . app --platform win32 --arch ia32 --out dist/ --icon resources/Icon.ico",
-    "exe64": "electron-packager . app --platform win32 --arch x64 --out dist/ --icon resources/Icon.ico",
-    "set32": "electron-installer-windows --src dist/app-win32-ia32/ --dest dist/installers/ia32/ --config config.json",
-    "set64": "electron-installer-windows --src dist/app-win32-x64/ --dest dist/installers/x64/ --config config.json",
-    "build": "npm run clean && npm run exe32 && npm run set32 && npm run exe64 && npm run set64"
+    "pack": "electron-builder --dir",
+    "dist": "AWS_ACCESS_KEY_ID=any AWS_SECRET_ACCESS_KEY=any electron-builder --win"
   },
   "devDependencies": {
-    "electron": "*",
-    "electron-installer-windows": "*",
-    "electron-packager": "*",
-    "rimraf": "*"
+    "electron": "6.0.2",
+    "electron-builder": "^21.2.0",
+    "electron-builder-squirrel-windows": "^21.2.0",
+    "electron-packager": "*"
   },
   "dependencies": {
+    "electron-updater": "^4.1.2",
     "fs-plus": "^3.0.2",
     "yargs": "^11.0.0"
+  },
+  "build": {
+    "appId": "br.com.isaerp.isaapi",
+    "publish": {
+      "provider": "s3",
+      "bucket": "isaapi.isaerp.com.br",
+      "acl": "public-read",
+      "path": "appVersion"
+    }
   }
 }
