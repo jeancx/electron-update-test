@@ -2,17 +2,10 @@
   'use strict'
 
   const path = require('path')
-  const electron = require('electron')
-  const app = electron.app
-  const Menu = electron.Menu
-  const Tray = electron.Tray
-  const BrowserWindow = electron.BrowserWindow
-  const { autoUpdater,  } = require("electron-updater")
-  const dialog = electron.dialog
+  const { app, Menu, Tray, BrowserWindow, dialog } = require('electron')
+  const { autoUpdater } = require("electron-updater")
 
-  let tray = null
-  let win = null
-  let quitting = false
+  let tray = null, win = null, quitting = false
 
   const args = require('./args')
   const squirrel = require('./squirrel')
