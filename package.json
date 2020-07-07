@@ -16,7 +16,7 @@
     "dist": "AWS_ACCESS_KEY_ID=any AWS_SECRET_ACCESS_KEY=any electron-builder --win"
   },
   "devDependencies": {
-    "electron": "6.0.2",
+    "electron": "9.1.0",
     "electron-builder": "^21.2.0",
     "electron-builder-squirrel-windows": "^21.2.0",
     "electron-packager": "*"
